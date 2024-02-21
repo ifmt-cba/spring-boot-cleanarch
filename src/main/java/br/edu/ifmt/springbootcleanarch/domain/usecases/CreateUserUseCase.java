@@ -1,7 +1,7 @@
 package br.edu.ifmt.springbootcleanarch.domain.usecases;
 
+import br.edu.ifmt.springbootcleanarch.domain.entities.User;
 import br.edu.ifmt.springbootcleanarch.domain.ports.UserPort;
-import br.edu.ifmt.springbootcleanarch.domain.model.User;
 
 public class CreateUserUseCase {
   private final UserPort userPort;

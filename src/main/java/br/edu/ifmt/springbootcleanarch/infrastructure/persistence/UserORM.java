@@ -4,18 +4,18 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table("USER")
-public class UserEntity {
+public class UserORM {
   @Id
   private Long id;
   private String username;
   private String password;
   private String email;
 
-  public UserEntity() {
+  public UserORM() {
 
   }
 
-  public UserEntity(String username, String password, String email) {
+  public UserORM(String username, String password, String email) {
     this.username = username;
     this.password = password;
     this.email = email;

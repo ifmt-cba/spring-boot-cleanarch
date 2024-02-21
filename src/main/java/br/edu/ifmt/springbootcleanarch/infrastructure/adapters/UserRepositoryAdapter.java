@@ -1,26 +1,26 @@
 package br.edu.ifmt.springbootcleanarch.infrastructure.adapters;
 
-import br.edu.ifmt.springbootcleanarch.domain.model.User;
+import br.edu.ifmt.springbootcleanarch.domain.entities.User;
 import br.edu.ifmt.springbootcleanarch.domain.ports.UserPort;
-import br.edu.ifmt.springbootcleanarch.infrastructure.mappers.UserEntityMapper;
-import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserEntity;
+import br.edu.ifmt.springbootcleanarch.infrastructure.mappers.UserORMMapper;
+import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserORM;
 import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserRepository;
 
 public class UserRepositoryAdapter implements UserPort {
   private final UserRepository userRepository;
-  private final UserEntityMapper userEntityMapper;
+  private final UserORMMapper userORMMapper;
 
-  public UserRepositoryAdapter(UserRepository userRepository, UserEntityMapper userEntityMapper) {
+  public UserRepositoryAdapter(UserRepository userRepository, UserORMMapper userORMMapper) {
     this.userRepository = userRepository;
-    this.userEntityMapper = userEntityMapper;
+    this.userORMMapper = userORMMapper;
   }
 
   @Override
   public User createUser(User userDomainObj) {
-    UserEntity userEntity = userEntityMapper.toEntity(userDomainObj);
-    UserEntity savedEntity = userRepository.save(userEntity);
+    UserORM userORM = userORMMapper.toORM(userDomainObj);
+    UserORM savedUser = userRepository.save(userORM);
 
-    return userEntityMapper.toDomainObj(savedEntity);
+    return userORMMapper.toDomainObj(savedUser);
   }
 
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifmt.springbootcleanarch.application.io.CreateUserRequest;
 import br.edu.ifmt.springbootcleanarch.application.io.CreateUserResponse;
 import br.edu.ifmt.springbootcleanarch.application.mappers.UserDTOMapper;
-import br.edu.ifmt.springbootcleanarch.domain.model.User;
+import br.edu.ifmt.springbootcleanarch.domain.entities.User;
 import br.edu.ifmt.springbootcleanarch.domain.usecases.CreateUserUseCase;
 
 @RestController
