@@ -3,11 +3,11 @@ package br.edu.ifmt.springbootcleanarch.main;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import br.edu.ifmt.springbootcleanarch.application.mappers.UserDTOMapper;
 import br.edu.ifmt.springbootcleanarch.domain.ports.UserPort;
 import br.edu.ifmt.springbootcleanarch.domain.usecases.CreateUserUseCase;
-import br.edu.ifmt.springbootcleanarch.application.adapters.UserDTOMapper;
-import br.edu.ifmt.springbootcleanarch.infrastructure.adapters.UserEntityMapper;
 import br.edu.ifmt.springbootcleanarch.infrastructure.adapters.UserRepositoryAdapter;
+import br.edu.ifmt.springbootcleanarch.infrastructure.mappers.UserEntityMapper;
 import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserRepository;
 
 @Configuration

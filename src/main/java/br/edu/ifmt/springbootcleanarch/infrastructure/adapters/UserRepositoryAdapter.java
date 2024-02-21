@@ -2,6 +2,7 @@ package br.edu.ifmt.springbootcleanarch.infrastructure.adapters;
 
 import br.edu.ifmt.springbootcleanarch.domain.model.User;
 import br.edu.ifmt.springbootcleanarch.domain.ports.UserPort;
+import br.edu.ifmt.springbootcleanarch.infrastructure.mappers.UserEntityMapper;
 import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserEntity;
 import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserRepository;
 

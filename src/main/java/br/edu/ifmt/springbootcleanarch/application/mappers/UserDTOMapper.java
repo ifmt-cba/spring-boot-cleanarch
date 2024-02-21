@@ -1,9 +1,11 @@
-package br.edu.ifmt.springbootcleanarch.application.adapters;
+package br.edu.ifmt.springbootcleanarch.application.mappers;
 
+import br.edu.ifmt.springbootcleanarch.application.io.CreateUserRequest;
+import br.edu.ifmt.springbootcleanarch.application.io.CreateUserResponse;
 import br.edu.ifmt.springbootcleanarch.domain.model.User;
 
 public class UserDTOMapper {
-  CreateUserResponse toResponse(User user) {
+  public CreateUserResponse toResponse(User user) {
     return new CreateUserResponse(user.username(), user.email());
   }
 
