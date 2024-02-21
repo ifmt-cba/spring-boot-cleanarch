@@ -7,26 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifmt.springbootcleanarch.application.io.CreateUserRequest;
 import br.edu.ifmt.springbootcleanarch.application.io.CreateUserResponse;
-import br.edu.ifmt.springbootcleanarch.application.mappers.UserDTOMapper;
-import br.edu.ifmt.springbootcleanarch.domain.entities.User;
-import br.edu.ifmt.springbootcleanarch.domain.usecases.CreateUserUseCase;
+import br.edu.ifmt.springbootcleanarch.application.usecases.SignUpUserUseCase;
 
 @RestController
 @RequestMapping("users")
 public class UserRestAdapter {
-  private final CreateUserUseCase createUserUseCase;
-  private final UserDTOMapper userDTOMapper;
+  private final SignUpUserUseCase signUpUserUseCase;
 
-  public UserRestAdapter(CreateUserUseCase createUserUseCase,
-      UserDTOMapper userDTOMapper) {
-    this.createUserUseCase = createUserUseCase;
-    this.userDTOMapper = userDTOMapper;
+  public UserRestAdapter(SignUpUserUseCase signUpUserUseCase) {
+    this.signUpUserUseCase = signUpUserUseCase;
   }
 
   @PostMapping
-  public CreateUserResponse createUser(@RequestBody CreateUserRequest request) {
-    User userBusinessObj = userDTOMapper.toUser(request);
-    User user = createUserUseCase.createUser(userBusinessObj);
-    return userDTOMapper.toResponse(user);
+  public CreateUserResponse insertUser(@RequestBody CreateUserRequest request) {
+    return signUpUserUseCase.signUp(request);
   }
 }
