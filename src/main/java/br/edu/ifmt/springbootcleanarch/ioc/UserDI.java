@@ -1,4 +1,4 @@
-package br.edu.ifmt.springbootcleanarch.configurations;
+package br.edu.ifmt.springbootcleanarch.ioc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import br.edu.ifmt.springbootcleanarch.infrastructure.mappers.UserORMMapper;
 import br.edu.ifmt.springbootcleanarch.infrastructure.persistence.UserRepository;
 
 @Configuration
-public class UserConfig {
+public class UserDI {
 
   @Bean
   SignUpUserUseCase signUpUserUseCase(CreateUserService createUSerService, UserDTOMapper userDTOMapper) {
