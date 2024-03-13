@@ -13,18 +13,18 @@ public class CreateUserService {
 
   public CreateUserService(UserPort createUser) {
     this.userPort = createUser;
-    this.excRB = ResourceBundle.getBundle("resources/exceptions", new Locale("pt","BR"));
+    this.excRB = ResourceBundle.getBundle("exceptions", new Locale("pt","BR"));
   }
 
   public User createUser(User user) throws UserException {
-    if (user.getUsername() == null)
+    if (user.getUsername().toString() == null)
       throw new UserException(excRB.getString("user.username.invalid"));
 
-    if (user.getEmail() == null)
-      throw new UserException("user.email.invalid");
+    if (user.getEmail().toString() == null)
+      throw new UserException(excRB.getString("user.email.invalid"));
       
-    if (user.getPassword() == null)
-      throw new UserException("user.password.invalid"); 
+    if (user.getPassword().toString() == null)
+      throw new UserException(excRB.getString("user.password.invalid")); 
 
     return userPort.createUser(user);
   }
