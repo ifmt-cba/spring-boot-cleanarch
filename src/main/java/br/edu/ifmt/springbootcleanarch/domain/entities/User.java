@@ -10,6 +10,12 @@ public class User {
     private Password password;
     private Email email;
 
+    public User() {
+        this.username = new Username(null);
+        this.password = new Password(null);
+        this.email = new Email(null);
+    }
+
     public Username getUsername() { return username; }
 
     public void setUsername(Username username) { this.username = username; }

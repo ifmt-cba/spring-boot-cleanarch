@@ -12,7 +12,7 @@ public class Password {
     private String password;
 
     public Password(String password) {
-        if (Pattern.matches(regex, password)) {
+        if (password != null && Pattern.matches(regex, password)) {
             this.password = password;
         } else {
             this.password = null;

@@ -22,7 +22,7 @@ public class Email {
     private String email;
 
     public Email(String email) {
-        if (Pattern.matches(regex, email)) {
+        if (email != null && Pattern.matches(regex, email)) {
             this.email = email;
         } else {
             this.email = null;

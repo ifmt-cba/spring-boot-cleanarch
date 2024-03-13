@@ -15,7 +15,7 @@ public class Username {
     private String username;
 
     public Username(String username) {
-        if (Pattern.matches(regex, username)) {
+        if (username != null && Pattern.matches(regex, username)) {
             this.username = username;
         } else {
             this.username = null;
