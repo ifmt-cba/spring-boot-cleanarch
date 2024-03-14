@@ -28,4 +28,12 @@ public class User {
 
     public void setEmail(Email email) { this.email = email; }
 
+    @Override
+    public String toString() {
+        return String.format("{\"username\":\"%s\",\"email\":\"%s\",\"password\":\"%s\"}",
+            username.toString(),
+            email.toString(),
+            password.toString());
+    }
+
 }

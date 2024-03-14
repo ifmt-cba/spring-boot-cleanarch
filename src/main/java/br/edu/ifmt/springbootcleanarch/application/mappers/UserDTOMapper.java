@@ -19,10 +19,13 @@ public class UserDTOMapper {
 
   public User toUser(CreateUserRequest request) throws NoSuchAlgorithmException {
     User user = new User();
-    user.setUsername(new Username(request.username()));
-    byte[] sha256 = MessageDigest.getInstance("SHA-256").digest(request.password().getBytes(StandardCharsets.UTF_8));
-    user.setPassword(new Password(bytesToHex(sha256)));
-    user.setEmail(new Email(request.email()));
+    user.setUsername(new Username(request.username()==null?"":request.username()));
+    if (request.password()!=null) {
+      byte[] sha256 = MessageDigest.getInstance("SHA-256").digest(request.password().getBytes(StandardCharsets.UTF_8));
+      user.setPassword(new Password(bytesToHex(sha256)));
+    } else
+      user.setPassword(new Password(null));
+    user.setEmail(new Email(request.email()==null?"":request.email()));
     return user;
   }
 
