@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class UserTest {
     
     @Test
-    void testToString() {
+    void testToStringJSONFormat() {
         assertDoesNotThrow(new Executable() {
 
             @Override
