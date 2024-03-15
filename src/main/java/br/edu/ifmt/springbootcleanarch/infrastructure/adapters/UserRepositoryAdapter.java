@@ -23,7 +23,6 @@ public class UserRepositoryAdapter implements UserPort {
   @Override
   public User createUser(User userDomainObj) {
     logPort.trace("-> UserRepositoryAdapter.createUser");
-    logPort.debug(userDomainObj.toString());
     UserORM userORM = userORMMapper.toORM(userDomainObj);
     logPort.debug(userORM.toString());
     UserORM savedUser = userRepository.save(userORM);

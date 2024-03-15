@@ -21,7 +21,6 @@ public class CreateUserService {
 
   public User createUser(User user) throws UserException {
     logPort.trace("-> CreateUserService.createUser()");
-    logPort.debug(user.toString());
     StringBuilder exc = new StringBuilder();
 
     if (user.getUsername().toString() == null)
