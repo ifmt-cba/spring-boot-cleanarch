@@ -30,7 +30,13 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("{\"username\":\"%s\",\"email\":\"%s\",\"password\":\"%s\"}",
+        return String.format("""
+                {
+                    "username":"%s",
+                    "email":"%s",
+                    "password":"%s"
+                }
+                """,
             username.toString(),
             email.toString(),
             password.toString());
