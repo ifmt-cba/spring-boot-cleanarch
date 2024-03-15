@@ -52,4 +52,13 @@ public class UserORM {
   public void setEmail(String email) {
     this.email = email;
   }
+
+  @Override
+  public String toString() {
+      return String.format("{\"id\":\"%d\",\"username\":\"%s\",\"email\":\"%s\",\"password\":\"%s\"}",
+        this.id, 
+        this.username,
+        this.email,
+        this.password);
+  }
 }
