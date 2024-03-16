@@ -1,0 +1,3 @@
+[submodule "spring-boot-cleanarch-client-cli"]
+	path = spring-boot-cleanarch-client-cli
+	url = http://github.com/ifmt-cba/spring-boot-cleanarch-client-cli
